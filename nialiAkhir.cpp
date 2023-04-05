@@ -16,8 +16,30 @@ struct mahasiswa{
     string name;
     string prodi;
     nilai_mahasiswa nilai;
+    char grade;
 };
 
+char mutu(int na){
+    mahasiswa mhs;
+    if (na > 80)
+    {
+        return 'A';
+    }else if (na > 70 && na <=85){
+        return 'B';
+    }
+    else if (na > 55 && na <=70)
+    {
+        return 'C';
+    }
+    else if (na > 40 && na <=55)
+    {
+        return 'D';
+    }else if (na <= 40 )
+    {
+        return 'E';
+    }
+    return 0;
+}
 int main (){
     int jumlahMahasiswa;
     cout << "Data mahasiswa yang ingin dimasukan : ";
@@ -37,6 +59,7 @@ int main (){
         cout << "Nilai UTS      : ";cin>>mhs[i].nilai.uts;
         cout << "Nilai UAS      : ";cin>>mhs[i].nilai.uas;
     }
+    cout << endl << endl;
     for (int i = 0; i < jumlahMahasiswa; i++)
     {
         cout << "Data Mahasiswa ke-"<< i+1<<endl;
@@ -48,23 +71,8 @@ int main (){
         cout << "Nilai UAS      : "<<mhs[i].nilai.uas<<endl;
         mhs[i].nilai.nilaiAkhir = (mhs[i].nilai.tugas * 30/100)+(mhs[i].nilai.kuis * 10/100)+(mhs[i].nilai.uts * 30/100)+(mhs[i].nilai.uas * 30/100);
         cout << "Nilai Akhir    : "<<mhs[i].nilai.nilaiAkhir<<endl;
-        if (mhs[i].nilai.nilaiAkhir > 80){
-            cout<< "Grade          : A"       <<endl<<endl;
-        }else if (mhs[i].nilai.nilaiAkhir > 70 && mhs[i].nilai.nilaiAkhir <=85){
-            cout<< "Grade          : B"       <<endl<<endl;
-        }
-        else if (mhs[i].nilai.nilaiAkhir > 55 && mhs[i].nilai.nilaiAkhir <=70)
-        {
-            cout<< "Grade          : C"       <<endl<<endl;
-        }
-        else if (mhs[i].nilai.nilaiAkhir > 40 && mhs[i].nilai.nilaiAkhir <=55)
-        {
-            cout<< "Grade          : D"       <<endl<<endl;
-        }else if (mhs[i].nilai.nilaiAkhir <= 40 )
-        {
-            cout<< "Grade          : E"       <<endl<<endl;
-        }
-        
+        mhs[i].grade = mutu(mhs[i].nilai.nilaiAkhir);
+        cout << "Grade          : "<< mhs[i].grade<<endl<<endl;
     }
     
 }
