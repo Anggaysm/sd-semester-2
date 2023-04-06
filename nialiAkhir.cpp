@@ -20,7 +20,6 @@ struct mahasiswa{
 };
 
 char mutu(int na){
-    mahasiswa mhs;
     if (na > 80)
     {
         return 'A';
@@ -63,8 +62,8 @@ int main (){
     for (int i = 0; i < jumlahMahasiswa; i++)
     {
         cout << "Data Mahasiswa ke-"<< i+1<<endl;
-        cout << "Nim            :"<<mhs[i].nim<<endl;
-        cout << "Nama           :"<<mhs[i].name<<endl;
+        cout << "Nim            : "<<mhs[i].nim<<endl;
+        cout << "Nama           : "<<mhs[i].name<<endl;
         cout << "Nilai tugas    : "<<mhs[i].nilai.tugas<<endl;
         cout << "Nilai Quis     : "<<mhs[i].nilai.kuis<<endl;
         cout << "Nilai UTS      : "<<mhs[i].nilai.uts<<endl;
