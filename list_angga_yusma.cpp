@@ -108,7 +108,7 @@ void hapusBelakang() //Fungsi untuk menghapus node dibelakang
 		 bantu = head; //awalnya pointer bantu akan menunjuk ke head
 	 	   if(head!=tail){ //jika head tidak sama dengan tail
 	 	   	while(bantu->next!=tail) // selama pointer bantu tidak menunjuk ke tail
-	 		{
+	 		{   
 	 			bantu = bantu->next; // maka pointer bantu akan bergerak sampai
 	 								 // sebelum tail
 			}
@@ -135,7 +135,7 @@ void clear() //fungsi menghapus semua node
     {
         hapus = bantu; //pointer hapus akan menunjuk
                        //node yang ditunjuk oleh pointer baru
-        bantu = bantu -> next; // Pointer bantuk menunjuk ke node berikutnya
+        bantu = bantu -> next; // Pointer bantu menunjuk ke node berikutnya
         delete hapus; // mendelete node yang ditunjuk oleh pointer hapus
     }
     head = NULL; //linked list kosong;
