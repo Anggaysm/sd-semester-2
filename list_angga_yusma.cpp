@@ -40,7 +40,7 @@ void insertDepan(int databaru) // Fungsi menambah node di depan
 	}
 	else {
 			baru->next = head; // Jika dalam linked list sudahh ada node maka
-							   // pointer node baru akan menunjuk head
+								   // pointer node baru akan menunjuk head
 							   // (node awal dalam linked list)
 			head = baru; // maka node yang baru masuk akan menjadi head
 	}
